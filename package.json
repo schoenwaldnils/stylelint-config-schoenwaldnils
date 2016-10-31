@@ -1,0 +1,45 @@
+{
+  "name": "stylelint-config-schoenwaldnils",
+  "version": "1.0.0",
+  "description": "schoenwaldnils config for stylelint",
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "schoenwaldnils"
+  ],
+  "author": "schoenwaldnils",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schoenwaldnils/stylelint-config-schoenwaldnils.git"
+  },
+  "homepage": "https://github.com/schoenwaldnils/stylelint-config-schoenwaldnils",
+  "bugs": "https://github.com/schoenwaldnils/stylelint-config-schoenwaldnils/issues",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "ava": "^0.13.0",
+    "eslint": "^2.4.0",
+    "eslint-config-stylelint": "^1.0.0",
+    "npmpub": "^3.0.1",
+    "stylelint": "^7.0.1",
+    "stylelint-selector-bem-pattern": "^0.2.3"
+  },
+  "peerDependencies": {
+    "stylelint": "^7.0.1"
+  },
+  "scripts": {
+    "ava": "ava --verbose \"__tests__/**/*.js\"",
+    "lint": "eslint . --ignore-path .gitignore",
+    "pretest": "npm run lint",
+    "release": "npmpub",
+    "test": "npm run ava"
+  },
+  "eslintConfig": {
+    "extends": [
+      "stylelint"
+    ]
+  }
+}

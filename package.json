@@ -20,12 +20,12 @@
     "index.js"
   ],
   "devDependencies": {
-    "ava": "^0.13.0",
-    "eslint": "^2.4.0",
-    "eslint-config-stylelint": "^1.0.0",
+    "ava": "^0.16.0",
+    "eslint": "^3.9.1",
+    "eslint-config-stylelint": "^5.0.0",
     "npmpub": "^3.0.1",
     "stylelint": "^7.5.0",
-    "stylelint-selector-bem-pattern": "^0.2.3"
+    "stylelint-selector-bem-pattern": "^1.0.0"
   },
   "peerDependencies": {
     "stylelint": "^7.5.0"

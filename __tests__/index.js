@@ -85,6 +85,10 @@ test("no warnings with valid css", t => {
   .then(data => {
     const { errored, results } = data
     const { warnings } = results[0]
+    if (warnings[0]) {
+      console.log(warnings);
+      console.log('\n');
+    }
     t.falsy(errored, "no errored")
     t.is(warnings.length, 0, "flags no warnings")
   })

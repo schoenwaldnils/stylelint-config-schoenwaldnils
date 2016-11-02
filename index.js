@@ -201,7 +201,7 @@ module.exports = {
     "function-whitespace-after": "always",
     "function-url-quotes": "always",
     "indentation": 2,
-    "max-empty-lines": 1,
+    "max-empty-lines": 2,
     "max-line-length": 100,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
@@ -217,6 +217,7 @@ module.exports = {
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
     "length-zero-no-unit": true,
+    "property-case": "lower",
     "property-no-vendor-prefix": true,
     "root-no-standard-properties": true,
     "rule-nested-empty-line-before": [
@@ -245,5 +246,12 @@ module.exports = {
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
     "value-no-vendor-prefix": true,
+    "max-nesting-depth": [
+      2,
+      {
+        "ignore": [ "at-rules-without-declaration-blocks" ],
+      }
+    ],
+    "no-unknown-animations": true,
   },
 }

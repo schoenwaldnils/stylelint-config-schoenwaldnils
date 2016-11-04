@@ -223,11 +223,11 @@ module.exports = {
     "rule-nested-empty-line-before": [
       "always", {
         "except": ["first-nested"],
-      }
+      },
     ],
     "rule-non-nested-empty-line-before": "always-multi-line",
     "plugin/selector-bem-pattern": {
-      "preset": "suit"
+      "preset": "suit",
     },
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
@@ -244,8 +244,8 @@ module.exports = {
     "max-nesting-depth": [
       2,
       {
-        "ignore": [ "at-rules-without-declaration-blocks" ],
-      }
+        "ignore": ["at-rules-without-declaration-blocks"],
+      },
     ],
     "no-unknown-animations": true,
   },

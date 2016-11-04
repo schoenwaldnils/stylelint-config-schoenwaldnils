@@ -12,10 +12,10 @@ const validCss = (
 .Selector-1,
 .Selector-2,
 .Selector-3[type='text'] {
+  box-sizing: border-box;
   display: block;
   color: #333;
   background: linear-gradient(#fff, rgba(0, 0, 0, .8));
-  box-sizing: border-box;
 }
 
 .Selector-a,
@@ -29,6 +29,7 @@ const validCss = (
 }
 
 /* Single-line comment */
+
 @media (min-width >= 60em) {
   .Selector {
     transform: translate(1, 1) scale(3);
@@ -63,8 +64,8 @@ const validCss = (
   }
 
   .Selector::after {
-    background-image: url('x.svg');
     content: '→';
+    background-image: url('x.svg');
   }
 }
 

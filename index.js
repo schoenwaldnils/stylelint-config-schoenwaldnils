@@ -225,12 +225,7 @@ module.exports = {
         "except": ["first-nested"],
       }
     ],
-    "rule-non-nested-empty-line-before": [
-      "always",
-      {
-        "except": ["after-single-line-comment"],
-      },
-    ],
+    "rule-non-nested-empty-line-before": "always-multi-line",
     "plugin/selector-bem-pattern": {
       "preset": "suit"
     },

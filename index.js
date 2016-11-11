@@ -237,6 +237,7 @@ module.exports = {
     "rule-non-nested-empty-line-before": "always-multi-line",
     "plugin/selector-bem-pattern": {
       "preset": "suit",
+      "ignoreSelectors": "^\html.+$",
     },
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",

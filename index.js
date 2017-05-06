@@ -239,7 +239,8 @@ module.exports = {
       "preset": "suit",
       "ignoreSelectors": [
         "^html\.+$",
-        "^a\.+$",
+        "^html+$",
+        "^a[^a-z]\.+$",
         "^\.no-\.+$",
       ],
     },

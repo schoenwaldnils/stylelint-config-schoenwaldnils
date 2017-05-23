@@ -234,9 +234,9 @@ module.exports = {
       "always", {
         "except": [
           "after-single-line-comment",
-          "first-nested"
+          "first-nested",
         ],
-        ignore: ["after-comment"]
+        ignore: ["after-comment"],
       },
     ],
     "plugin/selector-bem-pattern": {

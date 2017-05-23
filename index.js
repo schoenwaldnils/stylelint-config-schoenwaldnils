@@ -1,10 +1,12 @@
 module.exports = {
   "plugins": [
+    "stylelint-order",
     "stylelint-selector-bem-pattern",
+    "stylelint-suitcss",
   ],
   "rules": {
     "at-rule-empty-line-before": [ "always", {
-      except: ["blockless-group"],
+      except: ["blockless-after-blockless"],
       ignore: ["after-comment"],
     } ],
     "at-rule-no-vendor-prefix": true,
@@ -23,7 +25,7 @@ module.exports = {
       {
         "except": ["first-nested"],
         "ignore": [
-          "between-comments",
+          "after-comment",
           "stylelint-commands",
         ],
       },
@@ -32,7 +34,7 @@ module.exports = {
     "declaration-bang-space-after": "never",
     "declaration-bang-space-before": "always",
     "declaration-block-no-shorthand-property-overrides": true,
-    "declaration-block-properties-order": [
+    "order/properties-order": [
       "box-sizing",
       "content",
       "position",
@@ -228,13 +230,15 @@ module.exports = {
     "length-zero-no-unit": true,
     "property-case": "lower",
     "property-no-vendor-prefix": true,
-    "root-no-standard-properties": true,
-    "rule-nested-empty-line-before": [
+    "rule-empty-line-before": [
       "always", {
-        "except": ["first-nested"],
+        "except": [
+          "after-single-line-comment",
+          "first-nested"
+        ],
+        ignore: ["after-comment"]
       },
     ],
-    "rule-non-nested-empty-line-before": "always-multi-line",
     "plugin/selector-bem-pattern": {
       "preset": "suit",
       "ignoreSelectors": [
@@ -250,7 +254,9 @@ module.exports = {
     "selector-list-comma-space-before": "never",
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "double",
-    "selector-root-no-composition": true,
+    "suitcss/custom-property-no-outside-root": true,
+    "suitcss/root-no-standard-properties": true,
+    "suitcss/selector-root-no-composition": true,
     "string-quotes": "single",
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
@@ -259,7 +265,7 @@ module.exports = {
     "max-nesting-depth": [
       2,
       {
-        "ignore": ["at-rules-without-declaration-blocks"],
+        "ignore": ["blockless-at-rules"],
       },
     ],
     "no-unknown-animations": true,

@@ -3526,7 +3526,7 @@ stylelint-suitcss@^1.0.0:
     postcss-selector-parser "^2.2.3"
     stylelint "^7.9.0"
 
-stylelint@>=3.0.2, stylelint@^7.5.0, stylelint@^7.9.0:
+stylelint@>=3.0.2, stylelint@^7.10.1, stylelint@^7.9.0:
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-7.10.1.tgz#209a7ce5e781fc2a62489fbb31ec0201ec675db2"
   dependencies:

@@ -27,7 +27,7 @@
     "stylelint-selector-bem-pattern": "^1.0.0"
   },
   "dependencies": {
-    "stylelint": "^7.5.0",
+    "stylelint": "^7.10.1",
     "stylelint-order": "^0.4.4",
     "stylelint-selector-bem-pattern": "^1.0.0",
     "stylelint-suitcss": "^1.0.0"

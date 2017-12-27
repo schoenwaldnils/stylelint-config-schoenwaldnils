@@ -20,15 +20,15 @@
     "index.js"
   ],
   "devDependencies": {
-    "ava": "^0.16.0",
-    "eslint": "^3.9.1",
-    "eslint-config-stylelint": "^5.0.0",
+    "ava": "~0.24.0",
+    "eslint": "~4.14.0",
+    "eslint-config-stylelint": "~8.0.0",
     "npmpub": "^3.0.1"
   },
   "dependencies": {
-    "stylelint": "^7.10.1",
-    "stylelint-order": "^0.4.4",
-    "stylelint-selector-bem-pattern": "^1.0.0",
+    "stylelint": "~8.4.0",
+    "stylelint-order": "~0.8.0",
+    "stylelint-selector-bem-pattern": "~2.0.0",
     "stylelint-suitcss": "^1.0.0"
   },
   "scripts": {

@@ -9,6 +9,10 @@ const validCss = (
  * Multi-line comment
  */
 
+.Selector-1 {
+  --background-color: green;
+}
+
 .Selector-1,
 .Selector-2,
 .Selector-3[type='text'] {
@@ -81,7 +85,7 @@ const invalidCss = (
 test("no warnings with valid css", t => {
   return stylelint.lint({
     code: validCss,
-    config: config,
+    config,
   })
   .then(data => {
     const { errored, results } = data
@@ -98,7 +102,7 @@ test("no warnings with valid css", t => {
 test("a warning with invalid css", t => {
   return stylelint.lint({
     code: invalidCss,
-    config: config,
+    config,
   })
   .then(data => {
     const { errored, results } = data

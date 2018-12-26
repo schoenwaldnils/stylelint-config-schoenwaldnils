@@ -87,6 +87,8 @@ module.exports = {
       'overflow',
       'overflow-x',
       'overflow-y',
+      'scroll-snap-type',
+      'scroll-snap-align',
       'clip',
       'clear',
       'font',
@@ -248,10 +250,10 @@ module.exports = {
     'plugin/selector-bem-pattern': {
       preset: 'suit',
       ignoreSelectors: [
-        '^html\.+$',
+        '^html.+$',
         '^html+$',
-        '^a[^a-z]\.+$',
-        '^\.no-\.+$',
+        '^a[^a-z].+$',
+        '^.no-.+$',
       ],
       ignoreCustomProperties: '^.+$',
     },

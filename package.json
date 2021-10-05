@@ -20,16 +20,16 @@
     "index.js"
   ],
   "devDependencies": {
-    "ava": "~0.24.0",
-    "eslint": "~4.14.0",
-    "eslint-config-stylelint": "~8.0.0",
-    "npmpub": "^3.0.1"
+    "ava": "^3.15.0",
+    "eslint": "^7.32.0",
+    "eslint-config-stylelint": "^14.0.0",
+    "npmpub": "^5.0.0"
   },
   "dependencies": {
-    "stylelint": "~8.4.0",
-    "stylelint-order": "~0.8.0",
-    "stylelint-selector-bem-pattern": "~2.0.0",
-    "stylelint-suitcss": "^1.0.0"
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-selector-bem-pattern": "^2.1.1",
+    "stylelint-suitcss": "^4.0.0"
   },
   "scripts": {
     "ava": "ava --verbose \"__tests__/**/*.js\"",

@@ -8,7 +8,7 @@ Configuration rules to ensure your CSS code is compliant with [SUIT CSS's code s
 ## Installation
 
 ```console
-$ npm install stylelint-config-suitcss
+$ npm install stylelint-config-schoenwaldnils
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ Set your stylelint config to:
 
 ```json
 {
-  "extends": "stylelint-config-suitcss"
+  "extends": "stylelint-config-schoenwaldnils"
 }
 ```
 
@@ -29,7 +29,7 @@ For example, to change the `indentation` to tabs and turn off the `number-leadin
 
 ```json
 {
-  "extends": "stylelint-config-suitcss",
+  "extends": "stylelint-config-schoenwaldnils",
   "rules": {
     "indentation": "tab",
     "number-leading-zero": null

@@ -23,11 +23,9 @@
     "ava": "ava --verbose \"__tests__/**/*.js\"",
     "lint": "eslint . --ignore-path .gitignore",
     "pretest": "npm run lint",
-    "release": "npmpub",
     "test": "npm run ava"
   },
   "dependencies": {
-    "postcss-styled-syntax": "^0.4.0",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.3",
@@ -38,7 +36,6 @@
     "ava": "^5.3.1",
     "eslint": "^8.47.0",
     "eslint-config-stylelint": "^20.0.0",
-    "npmpub": "^5.1.1",
     "typescript": "^5.1.6"
   }
 }

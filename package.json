@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-schoenwaldnils",
-  "version": "5.0.0-1",
+  "version": "5.0.0",
   "description": "schoenwaldnils config for stylelint",
   "keywords": [
     "stylelint",

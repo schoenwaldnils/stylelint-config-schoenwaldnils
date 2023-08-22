@@ -1,9 +1,8 @@
-import config from "../"
-import stylelint from "stylelint"
-import test from "ava"
+const config = require("../");
+const stylelint = require("stylelint");
+const test = require("ava");
 
-const validCss = (
-`/** @define Selector */
+const validCss = `/** @define Selector */
 
 /**
  * Multi-line comment
@@ -19,7 +18,7 @@ const validCss = (
   box-sizing: border-box;
   display: block;
   color: #333;
-  background: linear-gradient(#fff, rgba(0, 0, 0, .8));
+  background: linear-gradient(#fff, rgba(0 0 0 / 80%));
 }
 
 .Selector-a,
@@ -34,22 +33,22 @@ const validCss = (
 
 /* Single-line comment */
 
-@media (min-width >= 60em) {
+@media (width >= 60em) {
   .Selector {
     transform: translate(1, 1) scale(3);
   }
 }
 
-@media (min-orientation: portrait),
+@media (orientation: portrait),
   projection and (color) {
   .Selector-i + .Selector-ii {
     font-family: helvetica, arial, sans-serif;
-    background: color(rgb(0, 0, 0) lightness(50%));
+    background: color(rgb(0 0 0) .5);
   }
 }
 
-@media screen and screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+@media screen and (resolution = 192dpi),
+  screen and (resolution = 2dppx) {
   .Selector {
     height: 10rem;
     margin: 10px;
@@ -59,7 +58,7 @@ const validCss = (
         -45deg,
         transparent,
         #fff 25px,
-        rgba(255, 255, 255, 1) 50px
+        rgba(255 255 255 / 100%) 50px
       );
     box-shadow:
       0 1px 1px #000,
@@ -73,42 +72,77 @@ const validCss = (
   }
 }
 
-`)
+`;
 
-const invalidCss = (
-`a {
+const invalidCss = `a {} a {
+  top: .2em;
+}
+@media (min-width >= 60em) {
   top: 0.2em;
 }
+`;
 
-`)
+test("no warnings with valid css", (t) => {
+  return stylelint
+    .lint({
+      code: validCss,
+      config,
+    })
+    .then((data) => {
+      const { errored, results } = data;
+      const { warnings, invalidOptionWarnings } = results[0];
 
-test("no warnings with valid css", t => {
-  return stylelint.lint({
-    code: validCss,
-    config,
-  })
-  .then(data => {
-    const { errored, results } = data
-    const { warnings } = results[0]
-    if (warnings[0]) {
-      // eslint-disable-next-line
-      console.log(warnings, "\n")
-    }
-    t.falsy(errored, "no errored")
-    t.is(warnings.length, 0, "flags no warnings")
-  })
-})
+      if (warnings[0] || invalidOptionWarnings[0]) {
+        invalidOptionWarnings.forEach((warning) => {
+          console.error(`Line: ${warning.line}`, "\n", warning.text, "\n");
+        });
 
-test("a warning with invalid css", t => {
-  return stylelint.lint({
-    code: invalidCss,
-    config,
-  })
-  .then(data => {
-    const { errored, results } = data
-    const { warnings } = results[0]
-    t.truthy(errored, "errored")
-    t.is(warnings.length, 1, "flags one warning")
-    t.is(warnings[0].text, "Unexpected leading zero (number-leading-zero)", "correct warning text")
-  })
-})
+        warnings.forEach((warning) => {
+          console.error(`Line: ${warning.line}`, "\n", warning.text, "\n");
+        });
+      }
+
+      t.falsy(errored, "no errored");
+      t.is(warnings.length, 0, "flags no warnings");
+    });
+});
+
+test("a warning with invalid css", (t) => {
+  return stylelint
+    .lint({
+      code: invalidCss,
+      config,
+    })
+    .then((data) => {
+      const { errored, results } = data;
+      const { warnings } = results[0];
+
+      t.truthy(errored, "errored");
+      t.is(warnings.length, 5, "flags 5 warnings");
+      t.is(
+        warnings[0].text,
+        "Expected empty line before at-rule (at-rule-empty-line-before)",
+        "correct warning text"
+      );
+      t.is(
+        warnings[1].text,
+        "Unexpected empty block (block-no-empty)",
+        "correct warning text"
+      );
+      t.is(
+        warnings[2].text,
+        'Unexpected invalid media query "(min-width >= 60em)" (media-query-no-invalid)',
+        "correct warning text"
+      );
+      t.is(
+        warnings[3].text,
+        'Unexpected duplicate selector "a", first used at line 1 (no-duplicate-selectors)',
+        "correct warning text"
+      );
+      t.is(
+        warnings[4].text,
+        "Expected empty line before rule (rule-empty-line-before)",
+        "correct warning text"
+      );
+    });
+});

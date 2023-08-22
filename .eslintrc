@@ -1,0 +1,6 @@
+{
+  "extends": ["stylelint"],
+  "rules": {
+    "n/no-missing-import": "warn"
+  }
+}

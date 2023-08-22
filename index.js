@@ -1,10 +1,6 @@
 module.exports = {
   extends: ["stylelint-config-standard"],
-  plugins: [
-    "stylelint-order",
-    "stylelint-selector-bem-pattern",
-    "stylelint-suitcss",
-  ],
+  plugins: ["stylelint-order", "stylelint-selector-bem-pattern"],
   ignoreFiles: ["**/*.js", "**/*.ts", "out/**/*.css", "node_modules/**/*.css"],
   rules: {
     "comment-empty-line-before": [
@@ -196,7 +192,5 @@ module.exports = {
       },
     ],
     "selector-class-pattern": null,
-    "suitcss/root-no-standard-properties": true,
-    "suitcss/selector-root-no-composition": true,
   },
 };

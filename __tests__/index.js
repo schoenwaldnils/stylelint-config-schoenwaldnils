@@ -8,13 +8,13 @@ const validCss = `/** @define Selector */
  * Multi-line comment
  */
 
-.Selector-1 {
+.Selector--1 {
   --background-color: green;
 }
 
-.Selector-1,
-.Selector-2,
-.Selector-3[type='text'] {
+.Selector--1,
+.Selector--2,
+.Selector--3[type='text'] {
   box-sizing: border-box;
   display: block;
   color: #333;

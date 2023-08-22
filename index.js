@@ -191,6 +191,11 @@ module.exports = {
         ignore: ["after-comment"],
       },
     ],
-    "selector-class-pattern": null,
+    "selector-class-pattern":
+      "^([A-Za-z][a-z]*)(-[a-z]+)*(--[a-z0-9]+[A-Za-z]*)*$",
+    "custom-property-pattern":
+      "^([A-Za-z][A-Za-z]*)(-[A-Za-z]+)*(--[A-Za-z0-9]+[a-z]*)*$",
+    "custom-property-empty-line-before": null,
+    "declaration-block-no-redundant-longhand-properties": null,
   },
 };
